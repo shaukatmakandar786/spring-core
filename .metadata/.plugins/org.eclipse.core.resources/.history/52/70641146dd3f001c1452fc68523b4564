@@ -1,0 +1,17 @@
+package com.mactech1;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Exame {
+
+	public static void main(String[] args) {
+		
+		ApplicationContext context=new ClassPathXmlApplicationContext("Beans.xml");
+		Student sh=context.getBean("student1",Student.class);
+		sh.displayStudentInfo();
+		
+		
+	}
+
+}

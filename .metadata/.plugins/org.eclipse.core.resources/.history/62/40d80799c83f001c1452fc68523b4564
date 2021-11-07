@@ -1,0 +1,11 @@
+package com.mactech;
+
+public class Mobile {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hello Guys.....!");
+
+	}
+
+}
