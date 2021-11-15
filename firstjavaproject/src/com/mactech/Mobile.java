@@ -11,7 +11,7 @@ public class Mobile {
 //      airtel.calling();
 //      airtel.data();
 
-      //suppose Vodaphone providing nice features in feauture so we need to change above code manually like this.
+//      //suppose Vodaphone providing nice features in feauture so we need to change above code manually like this.
 //      Vodaphone vodaphone=new Vodaphone();
 //      vodaphone.calling();
 //      vodaphone.data();

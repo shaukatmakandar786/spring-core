@@ -5,6 +5,6 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-   <bean id="sim" class="com.mactech.Vodaphone"> </bean>
+   <bean id="sim" class="com.mactech.Airtel"> </bean>
 
 </beans>
