@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+<!-- here we are applying dependancy injection manually -->
+
+   
+	<bean id="heartObject" class="com.mactech2.Heart" />
+    <bean id="human" class="com.mactech2.Human"> 
+   		<property name="heart" ref="heartObject" />
+    </bean>
+  
+   
+      
+
+<!-- here we are applying dependancy injection using autowiring concepts(byName) here property name should be matched with id name  -->
+
+<!-- 
+
+	<bean id="heart" class="com.mactech2.Heart" />
+    <bean id="human" class="com.mactech2.Human" autowire="byName"> 
+  		
+    </bean>
+
+ -->  
+    
+<!-- here we are applying dependancy injection using autowiring concepts(byType) it uses the class name for verifying  -->
+	
+<!-- 
+
+	<bean id="heartObjectValue" class="com.mactech2.Heart" />
+    <bean id="human" class="com.mactech2.Human" autowire="byType"> 
+  		
+    </bean>
+
+ -->
+<!-- here we are applying dependancy injection using autowiring concepts by(constructor) it uses the class name for verifying  -->
+
+<!-- 
+
+	<bean id="heartObjectValue" class="com.mactech2.Heart" />
+    <bean id="human" class="com.mactech2.Human" autowire="constructor"> 
+  		
+    </bean>
+		
+ --> 
+ 
+ <!--  
+
+	<context:annotation-config></context:annotation-config>
+    <bean id="heartObjectValue" class="com.mactech2.Heart" />
+    <bean id="human" class="com.mactech2.Human" > 
+    </bean>
+  		
+ -->
+  
+ 
+
+<!-- if we have multiple object or multiple implementation at that time byType and byName condition will not satisfied then spring get confused to conceder which object
+at that time we can use @Qualifire to conceder a particular object.
+
+	<context:annotation-config></context:annotation-config>
+    <bean id="humanHeart" class="com.mactech2.Heart" />
+    <bean id="animalHeart" class="com.mactech2.Heart" />
+    
+    <bean id="human" class="com.mactech2.Human" > 
+  		
+    </bean>
+    
+    @Autowired
+    @Qualifire("humanHeart")
+    public void setHeart(Heart heart) {
+		this.heart = heart;
+		System.out.println("setter method is called");
+	}
+
+
+-->	
+</beans>
+
+
