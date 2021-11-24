@@ -16,7 +16,8 @@ public class FarmerController {
     @GetMapping("/farmers")
     public List<Farmer> getFarmers()
     {
-        return farmerService.getFarmers();
+
+        return farmerService.getAllFarmers();
     }
 
     @PostMapping("/farmers")
@@ -34,6 +35,7 @@ public class FarmerController {
     @PutMapping("/farmer")
     public Farmer updateFarmer(@RequestBody Farmer farmer)
     {
+
         return farmerService.updateFarmer(farmer);
     }
 

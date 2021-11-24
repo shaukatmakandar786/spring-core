@@ -13,7 +13,7 @@ public class FarmerService {
     @Autowired
     private FarmerDao farmerDao;
 
-    public List<Farmer> getFarmers()
+    public List<Farmer> getAllFarmers()
     {
         return farmerDao.findAll();
     }

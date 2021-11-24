@@ -1,56 +1,54 @@
 package com.farmersampleproject.entity;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
 public class Farmer {
 
     @Id
-    private int farmerId;
-    private String farmerName;
-    private String farmerAddress;
+    private int id;
+    private String name;
+    private String address;
+
+    public Farmer(int id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
 
     public Farmer() {
     }
 
-    public Farmer(int farmerId, String farmerName, String farmerAddress) {
-        this.farmerId = farmerId;
-        this.farmerName = farmerName;
-        this.farmerAddress = farmerAddress;
+    public int getId() {
+        return id;
     }
 
-    public int getFarmerId() {
-        return farmerId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setFarmerId(int farmerId) {
-        this.farmerId = farmerId;
+    public String getName() {
+        return name;
     }
 
-    public String getFarmerName() {
-        return farmerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setFarmerName(String farmerName) {
-        this.farmerName = farmerName;
+    public String getAddress() {
+        return address;
     }
 
-    public String getFarmerAddress() {
-        return farmerAddress;
-    }
-
-    public void setFarmerAddress(String farmerAddress) {
-        this.farmerAddress = farmerAddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override
     public String toString() {
         return "Farmer{" +
-                "farmerId=" + farmerId +
-                ", farmerName='" + farmerName + '\'' +
-                ", farmerAddress='" + farmerAddress + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
                 '}';
     }
 }
